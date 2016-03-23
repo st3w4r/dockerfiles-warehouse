@@ -1,0 +1,15 @@
+FROM ubuntu
+
+RUN sudo apt-get update
+RUN sudo apt-get install nodejs -y
+RUN sudo apt-get install npm -y
+RUN sudo apt-get install git -y
+
+# Tools
+RUN apt-get install vim -y
+
+# Symbolic link
+RUN sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+
+CMD /bin/bash

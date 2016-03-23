@@ -1,0 +1,12 @@
+FROM debian:wheezy
+
+RUN apt-get update
+RUN apt-get install clang -y
+RUN apt-get install binutils -y
+RUN apt-get install git -y
+
+# Tools
+RUN apt-get install vim -y
+
+
+CMD /bin/bash
