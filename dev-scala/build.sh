@@ -1,1 +1,1 @@
-docker build -t dev-scala
+docker build -t dev-scala -f Dockerfile .

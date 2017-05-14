@@ -1,1 +1,1 @@
-docker build -t dev-c
+docker build -t dev-c -f Dockerfile .

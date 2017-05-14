@@ -1,1 +1,1 @@
-docker build -t dev-ping
+docker build -t dev-ping -f Dockerfile .
