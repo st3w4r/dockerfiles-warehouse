@@ -22,7 +22,7 @@ RUN apt-get install openjdk-8-jre -y
 
 # DOWNLOAD SCALA
 
-RUN curl https://downloads.lightbend.com/scala/2.12.2/scala-2.12.2.deb > /app/scala.deb
+RUN curl https://downloads.lightbend.com/scala/2.12.2/scala-2.12.2.deb > scala.deb
 
 # INSTALL
 
