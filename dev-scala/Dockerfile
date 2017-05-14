@@ -16,6 +16,8 @@ RUN apt-get update -y && apt-get upgrade -y
 # DEPENDENCIES
 
 RUN apt-get install curl -y
+
+RUN apt install -t jessie-backports  openjdk-8-jre-headless ca-certificates-java
 RUN apt-get install openjdk-8-jre -y
 
 # DOWNLOAD SCALA
