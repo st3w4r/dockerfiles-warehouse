@@ -3,7 +3,7 @@ FROM ubuntu
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install curl -y
 
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install nodejs -y
 
 # Tools
