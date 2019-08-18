@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -i --rm  -v $PWD:/app -w /app --user=1000:1000 dev-python pylint ${@:1}
