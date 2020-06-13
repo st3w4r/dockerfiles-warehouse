@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  dev:
+    image: golang:latest
+    container_name: go-dev-app
+    # entrypoint: /bin/bash
+    tty: true
+    stdin_open: true
+    volumes:
+      - '.:/app'
+    working_dir: '/app'
+    networks:
+      - app
+  
+networks:
+  app:
+    driver: bridge
+    
