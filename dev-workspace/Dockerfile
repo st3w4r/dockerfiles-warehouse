@@ -18,10 +18,11 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && chmod 040 /etc/sudoers.d/$USERNAME
 
 # Install tooling
-RUN    apt install -y curl \
-    && apt install -y zsh \
-    && apt install -y git \
-    && apt install -y vim
+RUN apt install -y \
+    curl \
+    zsh \
+    git \
+    vim
 
 # Install Oh my ZSH and common packages
 # Source: https://github.com/microsoft/vscode-dev-containers/tree/v0.238.0/containers/python-3/.devcontainer
@@ -38,6 +39,30 @@ RUN    apt install -y build-essential \
     && apt install -y iputils-ping
 
 # Install Python
+RUN wget https://www.python.org/ftp/python/3.10.6/Python-3.10.6.tgz -O /tmp/Python-3.10.6.tgz
+
+RUN apt-get install -y \
+    make \
+    build-essential \
+    libssl-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    wget \
+    curl \
+    llvm \
+    libncurses5-dev \
+    libncursesw5-dev \
+    xz-utils \
+    tk-dev
+
+RUN cd /tmp && tar -xzvf Python-3.10.6.tgz
+RUN cd /tmp/Python-3.10.6 && ./configure --enable-optimizations --with-ensurepip=install
+RUN cd /tmp/Python-3.10.6 && make -j 8
+RUN cd /tmp/Python-3.10.6 && make altinstall
+RUN python3.10 --version
+RUN echo 'alias python=/usr/local/bin/python3.10' >> /home/dev/.zshrc
 
 # Install Go
 
