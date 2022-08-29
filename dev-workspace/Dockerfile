@@ -62,7 +62,7 @@ RUN cd /tmp/Python-3.10.6 && ./configure --enable-optimizations --with-ensurepip
 RUN cd /tmp/Python-3.10.6 && make -j 8
 RUN cd /tmp/Python-3.10.6 && make altinstall
 RUN python3.10 --version
-RUN echo 'alias python=/usr/local/bin/python3.10' >> /home/dev/.zshrc
+RUN echo 'alias python=/usr/local/bin/python3.10' >> /home/$USERNAME/.zshrc
 
 # Install Go
 
